@@ -12,6 +12,7 @@ const FileUpload = ({ setSource, setRender }) => {
             setSource(e.target.files[0]);
           }}
           id="image-upload"
+          accept=".zip"
           hidden
         />
         <label htmlFor="image-upload"> Upload Source File </label>
@@ -22,6 +23,7 @@ const FileUpload = ({ setSource, setRender }) => {
           onChange={(e) => {
             setRender(e.target.files[0]);
           }}
+          accept="image/png, image/jpeg, "
           id="render-upload"
           hidden
         />
