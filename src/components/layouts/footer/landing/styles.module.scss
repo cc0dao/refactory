@@ -1,0 +1,89 @@
+.footer {
+  background: black;
+  position: relative;
+  padding: 5rem;
+
+  @media (max-width: 576px) {
+    padding: 1rem;
+  }
+
+  .body {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+
+    .logo {
+      font-family: Armata;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 80px;
+      line-height: 100px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: #1ee4ff;
+    }
+
+    .text {
+      font-family: Armata;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 25px;
+      display: flex;
+      align-items: center;
+
+      color: #1ee4ff;
+
+      @media (max-width: 576px) {
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a {
+      font-family: Armata;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 25px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      color: #1ee4ff;
+      border-right: 1px solid #1ee4ff;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+
+    a:last-child {
+      border: none;
+    }
+  }
+}

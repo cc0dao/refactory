@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://designers.digitalax.xyz
+
+# Sitemaps
+Sitemap: https://designers.digitalax.xyz/sitemap.xml

@@ -1,0 +1,55 @@
+@import "../../assets/scss/helpers/helpers.scss";
+
+.designerPhotoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.designerPhoto {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 36px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.photoLinkWrapper {
+  padding-right: 12px;
+  height: 36px;
+}
+
+.designerPhotoLink {
+  cursor: pointer;
+  margin-right: 0;
+}
+
+.designerName {
+  font-size: 0.875rem;
+  line-height: 17px;
+  font-weight: 400;
+  max-width: 550px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.designerNameLink {
+  @include active();
+}
+
+.hashAddress {
+  white-space: nowrap;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  text-decoration: none;
+  @media only screen and (max-width: 640px) {
+    max-width: 280px;
+  }
+}

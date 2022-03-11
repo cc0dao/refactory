@@ -1,0 +1,53 @@
+{
+  "CLIENT_URL": "",
+  "BACKEND_API": "",
+  "STATIC_DOMAIN": "",
+  "TTL_STATIC": 3600000,
+  "TTL_NO_STATIC": 600000,
+  "IS_PROD": false,
+  "SENTRY_DSN": "https://efd721a5be464838a0166fa08f84d7ab@o484615.ingest.sentry.io/5538941",
+  "ENVIRONMENT": "",
+  "NETWORKS": [
+    "rinkeby",
+    "mainnet",
+    "mumbai",
+    "matic"
+  ],
+  "API_URLS": {
+    "mainnet": "https://api.thegraph.com/subgraphs/name/digitalax/digitalax",
+    "rinkeby": "https://api.thegraph.com/subgraphs/name/digitalax/digitalaxropsten",
+    "mumbai": "https://api.thegraph.com/subgraphs/name/digitalax/digitalaxmumbai",
+    "matic": "https://api.thegraph.com/subgraphs/name/digitalax/digitalaxmatic",
+    "goerli": "https://api.thegraph.com/subgraphs/name/digitalax/digitalaxgoerli"
+  },
+  "DEFAULT_NETWORK": "mainnet",
+  "DEFAULT_WEB3_URL": "https://mainnet.infura.io/v3/",
+  "EXPLORER_URLS": {
+    "mainnet": "https://etherscan.io/",
+    "rinkeby": "https://rinkeby.etherscan.io/"
+  },
+  "REWARD_CONTRACT_ADDRESSES": {
+    "mainnet": "0xC155DDd8aA737aA53bBCea9EA62CAC0A3EEc942f",
+    "rinkeby": "0xb0DED58EF09929b0A0F2b10f48D42883df97466E"
+  },
+  "DIGITAL_MARKETPLACE_ADDRESSES": {
+    "mainnet": "0xCC48554581c17c2837C13B1685E0e784fADC1c3b",
+    "rinkeby": "0xAcA4eaf530085B062dB530634DA637e266a823C9"
+  },
+  "MONA_TOKEN_ADDRESSES": {
+    "mainnet": "0x275f5Ad03be0Fa221B4C6649B8AeE09a42D9412A",
+    "rinkeby": "0x13379fe0e6992180ed0ac5174a02479896f9c510",
+    "mumbai": "0xefd3d060ddcfed7903806503440db1089031af3a",
+    "matic": "0x6968105460f67c3BF751bE7C15f92F5286Fd0CE5"
+  },
+  "ACCESS_CONTROL_ADDRESSES": "0xbe5c84e6b036cb41a7a6b5008b9427a5f4f1c9f5",
+  "EXCHANGE_API": "https://api.coingecko.com/api/v3",
+  "IMGIX_URL": "digitalax.imgix.net",
+  "DTX_ADDRESSES": {
+    "mainnet": "0x0B509F4b044F713A91bB50535914f7ad160532fe",
+    "rinkeby": "0x13379fe0e6992180ed0ac5174a02479896f9c510",
+    "goerli": "0xc9c3704a65fE2D4f1F94A02480b25DbFA5764332",
+    "mumbai": "0x1Bc6D640710759Be37E5DCD1b23B322250353751",
+    "matic": "0x7B2a989c4D1AD1B79a84CE2EB79dA5D8d9C2b7a7"
+  }
+}

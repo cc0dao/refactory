@@ -1,0 +1,291 @@
+@import "../../../assets/scss/helpers/grid.scss";
+@import "../../../assets/scss/helpers/variables.scss";
+@import "../../../assets/scss/helpers/helpers.scss";
+
+.wrapper {
+  @include wrapper();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 50px;
+  background-color: #000;
+  transition: 0.2s;
+  z-index: 99;
+
+  @media (max-width: 576px) {
+    padding: 20px 1rem;
+  }
+
+  &.residentProfile {
+    .link {
+      color: #1ee4ff !important;
+    }
+
+    .signButton {
+      color: #1ee4ff !important;
+      border: 1px solid #1ee4ff !important;
+
+      &:hover {
+        background: rgb(107, 104, 104);
+      }
+    }
+
+    .designerPhotoWrapper {
+      color: #1ee4ff !important;
+    }
+
+    .hashAddress * {
+      color: #1ee4ff !important;
+    }
+
+    .menuWrapper {
+      button {
+        color: #1ee4ff !important;
+        border: 1px solid #1ee4ff !important;
+      }
+    }
+  }
+}
+
+.logo {
+  font-family: Armata;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #1ee4ff;
+
+  @media (max-width: 576px) {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+
+.collapseIcon {
+  display: none;
+
+  div {
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    margin: 7px 0;
+  }
+}
+
+.leftBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  float: left;
+
+  @media (max-width: 1000px) {
+    justify-content: flex-start;
+  }
+}
+
+.goToMaticButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  height: 32px;
+  background: #6eb2f1;
+  border: 1px solid #767676;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 40px;
+  margin-top: -20px;
+  white-space: nowrap;
+
+  &:hover {
+    color: white;
+    background: #95c6f3;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.arrow {
+  margin-left: 4px;
+  @media screen and (max-width: 1000px) {
+    margin-left: -130px;
+    margin-top: 50px;
+  }
+  margin-top: 30px;
+  position: relative;
+  width: 60px;
+  height: 43px;
+  animation: scale 1s ease-in-out infinite alternate;
+}
+
+.arrowDesc {
+  width: 155px;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  color: white;
+  border: 0.3px solid #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 12px;
+  left: 54px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex: 1;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: row;
+
+    a {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .collapseIcon {
+      display: block;
+    }
+  }
+}
+
+.rightBox {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  float: right;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+}
+
+.link {
+  @include active();
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 17px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: underline;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    opacity: 0.8;
+    color: white;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 0.7rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    text-align: center;
+    line-height: 30px;
+    width: 100%;
+  }
+}
+.signButton {
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+}
+.buttonWrapper {
+  position: relative;
+}
+
+.menuWrapper {
+  position: absolute;
+  margin-top: 10px;
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 20px;
+  }
+}
+
+.menuButton {
+  @include reset-button();
+  @include active();
+  border: 1px solid white;
+  background-color: black;
+  border-radius: 0;
+  color: white;
+  box-shadow: none;
+  padding: 10px 10px;
+  width: 120%;
+  top: 100%;
+}
+
+.hashAddress {
+  :global {
+    .smallPhotoWithText__hashAddress {
+      max-width: 94px;
+    }
+  }
+}
+
+.linksWrapper {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    width: 100%;
+    background: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: 1000px) {
+    display: flex;
+  }
+}
+
+.arrowBottom {
+  display: flex;
+  align-items: center;
+  @include reset-button();
+  @include active();
+
+  .arrowBottomImg {
+    padding: 8px 0 8px 8px;
+  }
+}
+
+.expandedMenu {
+  .linksWrapper {
+    display: flex;
+  }
+
+  a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+}

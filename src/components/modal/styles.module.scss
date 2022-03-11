@@ -1,0 +1,92 @@
+@import "../../assets/scss/helpers/helpers.scss";
+
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 130;
+  font-family: "Inter";
+}
+
+.modal {
+  max-width: 1200px;
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
+  margin: auto;
+  padding: 48px;
+  @media (max-width: 980px) {
+    padding: 0;
+  }
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.content {
+  width: 704px;
+  &.casual {
+    width: 840px;
+  }
+  @media (max-width: 870px) {
+    width: 100%;
+  }
+  position: relative;
+}
+.background_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.wallets {
+  background: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 2rem;
+  padding: 36px 100px;
+  border: 2px solid white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @media (max-width: 980px) {
+    padding: 36px 10%;
+  }
+}
+
+.closeIcon {
+  @include reset-button();
+  @include active();
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 44px;
+  text-transform: uppercase;
+}
+
+.modalBodyText {
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+
+  &:not(:last-child) {
+    margin-bottom: 18px;
+  }
+}

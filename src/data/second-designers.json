@@ -1,0 +1,217 @@
+[
+  {
+    "id": 405,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 406,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 282,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 283,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 284,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 286,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 287,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 288,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 296,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 299,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 300,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 301,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 302,
+    "rarity": 3,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 265,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 132729,
+    "rarity": 1,
+    "isAuction": 1,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 132730,
+    "rarity": 1,
+    "isAuction": 1,
+    "designer": ["Tania MV Studio"]
+  },
+  {
+    "id": 425,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["Adam Saleh"]
+  },
+  {
+    "id": 426,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["Adam Saleh"]
+  },
+  {
+    "id": 464,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["LivingSparks"]
+  },
+  {
+    "id": 465,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["LivingSparks"]
+  },
+  {
+    "id": 132741,
+    "rarity": 1,
+    "isAuction": 1,
+    "designer": ["LivingSparks"]
+  },
+  {
+    "id": 268,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["Alyona Briukhanova"]
+  },
+  {
+    "id": 520,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["LivingSparks"]
+  },
+  {
+    "id": 567,
+    "rarity": 1,
+    "isAuction": 0,
+    "designer": ["Ros3D"]
+  },
+  {
+    "id": 567,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": ["Ros3D"]
+  },
+  {
+    "id": 570,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": [
+      "LivingSparks",
+      "Sasa3dimensions"
+    ]
+  },
+  {
+    "id": 570,
+    "rarity": 1,
+    "isAuction": 0,
+    "designer": [
+      "LivingSparks",
+      "Sasa3dimensions"
+    ]
+  },
+  {
+    "id": 576,
+    "rarity": 1,
+    "isAuction": 0,
+    "designer": [
+      "Stella Achenbach",
+      "HAFIDMX",
+      "DomingoBeta",
+      "CyntheDesign"
+    ]
+  },
+  {
+    "id": 597,
+    "rarity": 2,
+    "isAuction": 0,
+    "designer": [
+      "Amratio"
+    ]
+  },
+  {
+    "id": 630,
+    "rarity": 1,
+    "isAuction": 0,
+    "designer": [
+      "Stella Achenbach",
+      "Daria Permina"
+    ]
+  },
+  {
+    "id": 631,
+    "rarity": 1,
+    "isAuction": 0,
+    "designer": [
+      "Tania MV Studio",
+      "lilliansato",
+      "Stan Mclygin"
+    ]
+  },
+  {
+    "id": 650,
+    "rarity": 1,
+    "isAuction": 0,
+    "designer": [
+      "HAFIDMX",
+      "Amratio"
+    ]
+  }
+]

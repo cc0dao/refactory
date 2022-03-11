@@ -1,0 +1,112 @@
+@import "../helpers/variables.scss";
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  @media only screen and (min-width: 0px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 640px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 750px) {
+    font-size: 13px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 13px;
+  }
+  @media only screen and (min-width: 980px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1280px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1440px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1920px) {
+    font-size: 16px;
+  }
+  
+  h1, h2, h3, h4, h5, body, button, input, optgroup, select, textarea {
+    font-family: $primary-font;
+  }
+
+  body {
+    overflow-anchor: none;
+    color: $black;
+    height: 100%;
+    line-height: initial;
+  }
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $black;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  *, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    list-style-type: none;
+  } 
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  input[type="number"]:hover,
+  input[type="number"]:focus {
+    -moz-appearance: number-input;
+  }
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1490px) {
+  .highcharts-container {
+    width: 420px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .highcharts-container {
+    width: calc(100vw - 200px) !important;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .highcharts-container {
+    width: calc(100vw - 100px) !important;
+  }
+}
