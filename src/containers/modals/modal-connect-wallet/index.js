@@ -35,6 +35,7 @@ const ModalConnectWallet = ({ className, title }) => {
         <Modal
           onClose={() => handleClose()}
           title={title}
+          withCloseIcon
           className={styles.connectwallet}
         >
           {/* <div className={styles.modalItem} onClick={() => handleClick(WALLET_ARKANE)}>

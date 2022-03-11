@@ -147,29 +147,14 @@ const HeaderTopLine = ({ className, buttonText }) => {
             </a>
           )}
           <div className={styles.signBtn}>
-            {user ? (
+            {account ? (
               <div className={styles.buttonWrapper}>
                 <SmallPhotoWithText
-                  photo={
-                    user.get("avatar")
-                      ? user.get("avatar")
-                      : "./images/user-photo.svg"
-                  }
-                  address={user.get("username")}
+                  photo={"./images/user-photo.svg"}
+                  address={account}
                   className={styles.hashAddress}
-                >
-                  <button
-                    className={styles.arrowBottom}
-                    onClick={() => setIsShowMenu(!isShowMenu)}
-                  >
-                    <img
-                      className={styles.arrowBottomImg}
-                      src="./images/icons/arrow-bottom.svg"
-                      alt="arrow-bottom"
-                    />
-                  </button>
-                </SmallPhotoWithText>
-                {isShowMenu && (
+                ></SmallPhotoWithText>
+                {/* {isShowMenu && (
                   <div className={styles.menuWrapper}>
                     <button
                       onClick={() => handleProfileClick()}
@@ -200,7 +185,7 @@ const HeaderTopLine = ({ className, buttonText }) => {
                       Logout
                     </button>
                   </div>
-                )}
+                )} */}
               </div>
             ) : (
               <Button

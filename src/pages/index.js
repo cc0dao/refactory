@@ -7,6 +7,7 @@ import { getAccount, getUser } from "@selectors/user.selectors";
 import LoadingOverlay from "react-loading-overlay";
 import { upload } from "@utils/pinata";
 import Web3 from "web3";
+import { openConnectMetamaskModal } from "@actions/modals.actions";
 
 const abi = [
   {
@@ -806,6 +807,7 @@ const abi = [
 const address = "0x529eb75e98eD3287De0B9585fB0cF00B63f66a40";
 
 function Landing(props) {
+  const dispatch = useDispatch();
   const [source, setSource] = useState(null);
   const [render, setRender] = useState(null);
   const [name, setName] = useState("");
@@ -816,36 +818,40 @@ function Landing(props) {
   const [loading, setLoading] = useState(false);
 
   const onMint = async () => {
-    const metaJson = {
-      external_url: "http://cc0dao.xyz/",
-      description,
-      name,
-      attributes: [
-        {
-          trait_type: "Creator",
-          value: user.username,
-        },
-        {
-          trait_type: "Type",
-          value: "CC0",
-        },
-      ],
-    };
+    if (!account) {
+      dispatch(openConnectMetamaskModal());
+    } else {
+      const metaJson = {
+        external_url: "http://cc0dao.xyz/",
+        description,
+        name,
+        attributes: [
+          {
+            trait_type: "Creator",
+            value: account,
+          },
+          {
+            trait_type: "Type",
+            value: "CC0",
+          },
+        ],
+      };
 
-    setLoading(true);
-    const url = await upload(metaJson, render, source);
-    const { ethereum } = window;
-    const web3 = new Web3(ethereum);
-    const contract = new web3.eth.Contract(abi, address);
-    try {
-      const response = await contract.methods
-        .mint("0xEa41Cd3F972dB6237FfA2918dF9199B547172420", url, account)
-        .send({ from: account });
-      setSuccess(true);
-    } catch (e) {
-      console.log({ e });
+      setLoading(true);
+      const url = await upload(metaJson, render, source);
+      const { ethereum } = window;
+      const web3 = new Web3(ethereum);
+      const contract = new web3.eth.Contract(abi, address);
+      try {
+        const response = await contract.methods
+          .mint("0xEa41Cd3F972dB6237FfA2918dF9199B547172420", url, account)
+          .send({ from: account });
+        setSuccess(true);
+      } catch (e) {
+        console.log({ e });
+      }
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
