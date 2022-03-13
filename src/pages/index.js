@@ -818,10 +818,14 @@ function Landing(props) {
   const user = useSelector(getUser)?.toJS();
   const account = useSelector(getAccount);
   const [loading, setLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState("");
 
   useEffect(() => {
     if (source) {
       const upload = async () => {
+        setLoadingText(
+          "We are decentralising your file to IPFS. This may take some time, especially if your file is large!"
+        );
         setLoading(true);
         const data = await uploadSource(source);
         if (data?.data) {
@@ -838,6 +842,9 @@ function Landing(props) {
     if (render) {
       const upload = async () => {
         setLoading(true);
+        setLoadingText(
+          "We are decentralising your file to IPFS. This may take some time, especially if your file is large!"
+        );
         const data = await uploadRender(source);
         if (data?.data) {
           setRenderData({
@@ -873,6 +880,7 @@ function Landing(props) {
       };
 
       setLoading(true);
+      setLoadingText("Submitting Transaction");
       const url = await upload(metaJson, renderData, sourceData);
       const { ethereum } = window;
       const web3 = new Web3(ethereum);
@@ -892,7 +900,11 @@ function Landing(props) {
   return (
     <>
       <div className={styles.wrapper}>
-        {loading && <LoadingOverlay active={loading} spinner />}
+        {loading && (
+          <>
+            <LoadingOverlay active={loading} spinner text={loadingText} />
+          </>
+        )}
         <h1 className={styles.title}> {`Mint to { The CC0 Re-Factory }`} </h1>
         <div className={styles.section1}>
           <FileUpload
