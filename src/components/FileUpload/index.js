@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 
-const FileUpload = ({ setSource, setRender }) => {
+const FileUpload = ({ source, render, setSource, setRender }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.sourceUpload}>
@@ -16,6 +16,7 @@ const FileUpload = ({ setSource, setRender }) => {
           hidden
         />
         <label htmlFor="image-upload"> Upload Source File </label>
+        {source && <h1 className={styles.fileName}>{source.name}</h1>}
       </div>
       <div className={styles.renderUpload}>
         <input
@@ -28,6 +29,7 @@ const FileUpload = ({ setSource, setRender }) => {
           hidden
         />
         <label htmlFor="render-upload"> Upload Render File </label>
+        {render && <h1 className={styles.fileName}>{render.name}</h1>}
       </div>
     </div>
   );

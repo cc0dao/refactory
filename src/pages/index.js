@@ -844,7 +844,7 @@ function Landing(props) {
       const contract = new web3.eth.Contract(abi, address);
       try {
         const response = await contract.methods
-          .mint("0xEa41Cd3F972dB6237FfA2918dF9199B547172420", url, account)
+          .mint(account, url, account)
           .send({ from: account });
         setSuccess(true);
       } catch (e) {
@@ -860,7 +860,12 @@ function Landing(props) {
         {loading && <LoadingOverlay active={loading} spinner />}
         <h1 className={styles.title}> {`Mint to { The CC0 Re-Factory }`} </h1>
         <div className={styles.section1}>
-          <FileUpload setSource={setSource} setRender={setRender} />
+          <FileUpload
+            source={source}
+            render={render}
+            setSource={setSource}
+            setRender={setRender}
+          />
           <div className={styles.group}>
             <label> Item Name </label>
             <input value={name} onChange={(e) => setName(e.target.value)} />
