@@ -5,7 +5,7 @@ import FileUpload from "@components/FileUpload";
 import { useDispatch, useSelector } from "react-redux";
 import { getAccount, getUser } from "@selectors/user.selectors";
 import LoadingOverlay from "react-loading-overlay";
-import { upload } from "@utils/pinata";
+import { upload, uploadRender, uploadSource } from "@utils/pinata";
 import Web3 from "web3";
 import { openConnectMetamaskModal } from "@actions/modals.actions";
 
@@ -810,12 +810,47 @@ function Landing(props) {
   const dispatch = useDispatch();
   const [source, setSource] = useState(null);
   const [render, setRender] = useState(null);
+  const [sourceData, setSourceData] = useState(null);
+  const [renderData, setRenderData] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [success, setSuccess] = useState(false);
   const user = useSelector(getUser)?.toJS();
   const account = useSelector(getAccount);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (source) {
+      const upload = async () => {
+        setLoading(true);
+        const data = await uploadSource(source);
+        if (data?.data) {
+          setSourceData(data?.data);
+        }
+        setLoading(false);
+      };
+
+      upload();
+    }
+  }, [source]);
+
+  useEffect(() => {
+    if (render) {
+      const upload = async () => {
+        setLoading(true);
+        const data = await uploadRender(source);
+        if (data?.data) {
+          setRenderData({
+            ...data?.data,
+            key: render.type.includes("image") ? "image_url" : "animation_url",
+          });
+        }
+        setLoading(false);
+      };
+
+      upload();
+    }
+  }, [render]);
 
   const onMint = async () => {
     if (!account) {
@@ -838,7 +873,7 @@ function Landing(props) {
       };
 
       setLoading(true);
-      const url = await upload(metaJson, render, source);
+      const url = await upload(metaJson, renderData, sourceData);
       const { ethereum } = window;
       const web3 = new Web3(ethereum);
       const contract = new web3.eth.Contract(abi, address);

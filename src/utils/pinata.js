@@ -34,7 +34,30 @@ export const uploadFile = async (file) => {
   }
 };
 
-export const upload = async (metaJson, renderFile, sourceFile = null) => {
+export const uploadSource = async (sourceFile) => {
+  try {
+    let sourceFormData = new FormData();
+    sourceFormData.append("file", sourceFile);
+
+    let sourceImage = await axios.post(
+      "https://api.pinata.cloud/pinning/pinFileToIPFS",
+      sourceFormData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          ...pinataOptions,
+        },
+      }
+    );
+
+    return sourceImage;
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
+};
+
+export const uploadRender = async (renderFile) => {
   try {
     let formData = new FormData();
     formData.append("file", renderFile);
@@ -50,24 +73,14 @@ export const upload = async (metaJson, renderFile, sourceFile = null) => {
       }
     );
 
-    let sourceImage = null;
+    return image;
+  } catch (e) {
+    throw e;
+  }
+};
 
-    if (sourceFile) {
-      let sourceFormData = new FormData();
-      sourceFormData.append("file", sourceFile);
-
-      sourceImage = await axios.post(
-        "https://api.pinata.cloud/pinning/pinFileToIPFS",
-        sourceFormData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            ...pinataOptions,
-          },
-        }
-      );
-    }
-
+export const upload = async (metaJson, renderFile, sourceFile = null) => {
+  try {
     const result = await axios.post(
       "https://api.pinata.cloud/pinning/pinJSONToIPFS",
       {
@@ -76,13 +89,12 @@ export const upload = async (metaJson, renderFile, sourceFile = null) => {
         },
         pinataContent: {
           ...metaJson,
-          [renderFile.type.includes("image")
-            ? "image_url"
-            : "animation_url"]: `${cloudURL}/ipfs/${image.data.IpfsHash}`,
-          source_url:
-            sourceFile && sourceImage
-              ? `${cloudURL}/ipfs/${sourceImage.data.IpfsHash}`
-              : null,
+          [renderFile.key]: renderFile
+            ? `${cloudURL}/ipfs/${renderFile.IpfsHash}`
+            : null,
+          source_url: sourceFile
+            ? `${cloudURL}/ipfs/${sourceFile.IpfsHash}`
+            : null,
         },
       },
       {
