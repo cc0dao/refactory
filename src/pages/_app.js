@@ -67,7 +67,7 @@ const MyApp = ({ Component, pageProps, store, err }) => {
         <link
           rel="icon"
           type="image/png"
-          href="/images/icons/favicon-digitalax.ico"
+          href="/images/icons/fav.ico"
         />
         <link
           href="https://fonts.cdnfonts.com/css/internal-rainbows"
