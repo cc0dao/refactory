@@ -121,23 +121,23 @@ const HeaderTopLine = ({ className, buttonText }) => {
           className={cn(styles.links, isCollapse ? styles.expandedMenu : "")}
         >
           <div className={styles.linksWrapper}>
-            <Link href="https://fashion.digitalax.xyz">
+            <Link href="https://docs.cc0dao.xyz/web3-cc0-creative-residents">
               <a className={styles.link} target="_blank">
                 Web3 CC0 Creative Residents
               </a>
             </Link>
-            <Link href="/global">
+            <Link href="https://docs.cc0dao.xyz/concentrations/daily-cc0-dao-auctions">
               <a className={styles.link}>Bid in Daily Auctions</a>
             </Link>
-            <Link href="https://digitalax.xyz/look">
+            <Link href="https://docs.cc0dao.xyz/">
               <a className={styles.link} target="_blank">
                 Read the Documentation
               </a>
             </Link>
-            <Link href="/opensourcelibraries">
+            <Link href="https://docs.cc0dao.xyz/concentrations/the-cc0-re-factory">
               <a className={styles.link}>Contribute CC0</a>
             </Link>
-            <Link href="/getdressed">
+            <Link href="https://docs.cc0dao.xyz/join-the-dao">
               <a className={styles.link}>Join the DAO</a>
             </Link>
           </div>
